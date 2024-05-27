@@ -17,4 +17,10 @@ public class FruitResource {
         return Fruit.listAll(Sort.by("name"));
     }
 
+    @GET
+    @Path("/{id}")
+    public Uni<Fruit> getSingleRecord(Long id) {
+        return Fruit.findById(id);
+    }
+
 }
